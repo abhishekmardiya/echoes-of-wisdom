@@ -8,7 +8,7 @@ export const contentType = "image/png";
 
 export default async function Image() {
   const ebGaramond = await readFile(
-    join(process.cwd(), "assets/fonts/EBGaramond-Medium.ttf")
+    join(process.cwd(), "assets/fonts/EBGaramond-Medium.ttf"),
   );
 
   return new ImageResponse(
@@ -157,6 +157,6 @@ export default async function Image() {
           weight: 500,
         },
       ],
-    }
+    },
   );
 }
