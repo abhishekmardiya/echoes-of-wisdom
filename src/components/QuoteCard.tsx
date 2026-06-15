@@ -9,7 +9,7 @@ export const QuoteCard = ({ quote }: { quote: Quote }) => {
           <mark className="highlight-text">{quote.text}</mark>
           &rdquo;
         </p>
-        <footer className="quote-source book-serif mt-6 border-t border-(--border)/50 pt-4 text-right text-sm text-(--ink-soft)">
+        <footer className="book-serif mt-6 border-t border-(--border)/50 pt-4 text-right text-sm text-(--ink-soft)">
           {formatQuoteAttribution(quote)}
         </footer>
       </blockquote>

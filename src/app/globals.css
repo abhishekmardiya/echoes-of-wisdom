@@ -5,7 +5,6 @@
 :root {
   --page-bg: #cfc4b4;
   --page-bg-mid: #d4caba;
-  --header-bg: rgb(252 249 242 / 0.88);
   --paper: #faf6ee;
   --ink: #1a1612;
   --ink-quote: #12100d;
@@ -27,7 +26,6 @@
 .dark {
   --page-bg: #0f0e0c;
   --page-bg-mid: #161412;
-  --header-bg: rgb(22 20 18 / 0.92);
   --paper: #1e1c18;
   --ink: #f0ebe3;
   --ink-quote: #f5f1ea;

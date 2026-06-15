@@ -1,4 +1,4 @@
-export interface QuoteBook {
+interface QuoteBook {
   title: string;
   author: string;
   quotes: string[];

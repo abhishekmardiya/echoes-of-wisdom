@@ -15,25 +15,19 @@ Quotes live in code in [`src/lib/quotes.ts`](src/lib/quotes.ts). Source data is 
 
 To add or change quotes, append or edit objects in `quoteBooks` and redeploy or refresh locally.
 
-## Site URL (Open Graph)
-
-[`metadataBase`](https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase) is set in [`src/app/layout.tsx`](src/app/layout.tsx). Resolution order:
-
-1. `NEXT_PUBLIC_SITE_URL` — set this in production to your canonical origin (e.g. `https://your-domain.com`).
-2. Otherwise `VERCEL_URL` on Vercel (`https://…`).
-3. Otherwise `http://localhost:3000` for local builds.
-
 ## Scripts
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
-npm run build    # production build
-npm run start    # run production server
-npm run lint     # biome check
-npm run format   # biome format --write
+npm run dev          # dev server — http://localhost:3000
+npm run build        # production build
+npm run start        # serve production build
+npm run lint         # biome check
+npm run format       # biome format --write
+npm run ts           # tsc --noEmit --watch
+npm run debug-build  # next build --debug
 ```
 
 ## Requirements
 
-- Node.js compatible with Next.js 16 (see [Next.js system requirements](https://nextjs.org/docs/app/getting-started/installation))
+Node.js version compatible with Next.js 16 — see [Next.js system requirements](https://nextjs.org/docs/app/getting-started/installation#system-requirements).

@@ -25,7 +25,7 @@ export function ThemeToggle() {
       onClick={() => {
         setTheme(isDark ? "light" : "dark");
       }}
-      className="theme-toggle-btn flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-(--border) bg-(--paper) text-(--ink-faint) shadow-sm transition-[color,box-shadow,transform] duration-200 hover:text-(--ink) hover:shadow-md active:scale-95"
+      className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-(--border) bg-(--paper) text-(--ink-faint) shadow-sm transition-[color,box-shadow,transform] duration-200 hover:text-(--ink) hover:shadow-md active:scale-95"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {isDark ? <SunIcon /> : <MoonIcon />}
