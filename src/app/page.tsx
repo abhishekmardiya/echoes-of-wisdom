@@ -36,7 +36,7 @@ export default function Home() {
       <main className="relative z-1 mx-auto max-w-7xl px-4 pb-24 pt-10 sm:px-6 sm:py-12 sm:pb-10">
         <div className="columns-1 [column-fill:balance] gap-x-6 sm:columns-2 sm:gap-x-8 xl:columns-3">
           {quotes.map((quote, index) => (
-            <QuoteCard key={`${index}-${quote.book}`} quote={quote} />
+            <QuoteCard key={`${index}-${quote.title}`} quote={quote} />
           ))}
         </div>
       </main>
