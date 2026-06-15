@@ -1,16 +1,10 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "Echoes of Wisdom — highlighted quotes from books";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default async function Image() {
-  const ebGaramond = await readFile(
-    join(process.cwd(), "assets/fonts/EBGaramond-Medium.ttf"),
-  );
-
+export function Image() {
   return new ImageResponse(
     <div
       style={{
@@ -62,9 +56,8 @@ export default async function Image() {
             />
             <div
               style={{
-                fontFamily: "EB Garamond",
                 fontSize: "52px",
-                fontWeight: 500,
+                fontWeight: 600,
                 color: "#1a1a1a",
                 letterSpacing: "0.04em",
               }}
@@ -82,7 +75,6 @@ export default async function Image() {
 
           <div
             style={{
-              fontFamily: "EB Garamond",
               fontSize: "18px",
               color: "#1a1a1a",
               opacity: 0.45,
@@ -107,7 +99,6 @@ export default async function Image() {
             style={{
               display: "flex",
               justifyContent: "center",
-              fontFamily: "EB Garamond",
               fontSize: "36px",
               lineHeight: 1.55,
               color: "#1a1a1a",
@@ -136,7 +127,6 @@ export default async function Image() {
         >
           <div
             style={{
-              fontFamily: "EB Garamond",
               fontSize: "24px",
               color: "#1a1a1a",
               opacity: 0.75,
@@ -149,14 +139,8 @@ export default async function Image() {
     </div>,
     {
       ...size,
-      fonts: [
-        {
-          name: "EB Garamond",
-          data: ebGaramond,
-          style: "normal",
-          weight: 500,
-        },
-      ],
     },
   );
 }
+
+export default Image;

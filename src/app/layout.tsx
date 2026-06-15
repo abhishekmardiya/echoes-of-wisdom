@@ -1,5 +1,4 @@
 import { ThemeProvider } from "@teispace/next-themes";
-import { getTheme } from "@teispace/next-themes/server";
 import type { Metadata } from "next";
 import { EB_Garamond, Geist } from "next/font/google";
 import "./globals.css";
@@ -16,30 +15,42 @@ const ebGaramond = EB_Garamond({
   style: ["normal", "italic"],
 });
 
+function getMetadataBaseUrl(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL;
+  if (fromEnv && fromEnv.length > 0) {
+    return fromEnv;
+  }
+
+  const vercelUrl = process.env.VERCEL_URL;
+  if (vercelUrl && vercelUrl.length > 0) {
+    return `https://${vercelUrl}`;
+  }
+
+  return "http://localhost:3000";
+}
+
 export const metadata: Metadata = {
+  metadataBase: new URL(getMetadataBaseUrl()),
   title: "Echoes of Wisdom",
   description: "Underlined wisdom from books",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const initialTheme = await getTheme({ themes: ["light", "dark"] });
-
   return (
     <html
       lang="en"
       suppressHydrationWarning
       className={`${geistSans.variable} ${ebGaramond.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-full flex-col antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
-          initialTheme={initialTheme ?? undefined}
           themes={["light", "dark"]}
         >
           {children}

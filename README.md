@@ -15,6 +15,14 @@ Quotes live in code as a static list in [`src/lib/quotes.ts`](src/lib/quotes.ts)
 
 To add or change quotes, edit the `quotes` array in `quotes.ts` and redeploy or refresh locally.
 
+## Site URL (Open Graph)
+
+[`metadataBase`](https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase) is set in [`src/app/layout.tsx`](src/app/layout.tsx). Resolution order:
+
+1. `NEXT_PUBLIC_SITE_URL` — set this in production to your canonical origin (e.g. `https://your-domain.com`).
+2. Otherwise `VERCEL_URL` on Vercel (`https://…`).
+3. Otherwise `http://localhost:3000` for local builds.
+
 ## Scripts
 
 ```bash
