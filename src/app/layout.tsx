@@ -16,22 +16,24 @@ const ebGaramond = EB_Garamond({
   style: ["normal", "italic"],
 });
 
+const pageTitle = "Echoes of Wisdom | Quotes & Book Wisdom for Readers";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://echoes-of-wisdom-ten.vercel.app"),
-  title: "Echoes of Wisdom | Literary Quotes & Book Wisdom for Readers",
+  title: pageTitle,
   description:
     "Echoes of Wisdom gathers memorable quotes from fiction and nonfiction. Revisit lines that moved you and keep literary wisdom you return to.",
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Echoes of Wisdom",
-    title: "Echoes of Wisdom | Literary Quotes & Book Wisdom for Readers",
+    title: pageTitle,
     description:
       "Discover curated quotes and underlined book wisdom worth saving and sharing—built for readers who love words that linger.",
   },
   twitter: {
-    card: "summary",
-    title: "Echoes of Wisdom | Literary Quotes & Book Wisdom for Readers",
+    card: "summary_large_image",
+    title: pageTitle,
     description:
       "Discover curated quotes and underlined book wisdom worth saving and sharing—built for readers who love words that linger.",
   },
