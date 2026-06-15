@@ -13,7 +13,7 @@ export default function QuoteCard({ quote }: QuoteCardProps) {
           <mark className="highlight-text">{quote.quote}</mark>
           &rdquo;
         </p>
-        <footer className="book-serif mt-4 text-right text-sm text-[var(--ink-soft)]">
+        <footer className="book-serif mt-4 text-right text-sm text-(--ink-soft)">
           - {quote.book}
         </footer>
       </blockquote>

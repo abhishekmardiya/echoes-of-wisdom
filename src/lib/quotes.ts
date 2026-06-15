@@ -1,7 +1,6 @@
 import "server-only";
 
 export type Quote = {
-  id: number;
   quote: string;
   book: string;
 };
@@ -12,12 +11,12 @@ type QuotesResponse = {
 
 export async function getQuotes(): Promise<Quote[]> {
   const response = await fetch(
-    "https://j2o65frtknhjaohy.public.blob.vercel-storage.com/quotes.json",
+    "https://j2o65frtknhjaohy.public.blob.vercel-storage.com/quotes.json"
   );
 
   if (!response.ok) {
     throw new Error(
-      `Failed to load quotes: ${response.status} ${response.statusText}`,
+      `Failed to load quotes: ${response.status} ${response.statusText}`
     );
   }
 

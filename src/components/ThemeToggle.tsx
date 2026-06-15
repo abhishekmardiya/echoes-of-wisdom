@@ -12,7 +12,7 @@ export default function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return <span className="inline-block h-8 w-[4.5rem]" aria-hidden="true" />;
+    return <span className="inline-block h-8 w-18" aria-hidden="true" />;
   }
 
   const isDark = resolvedTheme === "dark";
@@ -23,7 +23,7 @@ export default function ThemeToggle() {
       onClick={() => {
         setTheme(isDark ? "light" : "dark");
       }}
-      className="cursor-pointer rounded-full border border-[var(--border)] bg-[var(--paper)] px-3 py-1.5 text-xs tracking-wide text-[var(--ink-faint)] transition-colors hover:text-[var(--ink)]"
+      className="cursor-pointer rounded-full border border-(--border) bg-(--paper) px-3 py-1.5 text-xs tracking-wide text-(--ink-faint) transition-colors hover:text-(--ink)"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {isDark ? "Light mode" : "Dark mode"}
