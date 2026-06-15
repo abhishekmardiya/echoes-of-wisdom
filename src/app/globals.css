@@ -8,15 +8,16 @@
   --header-bg: rgb(252 249 242 / 0.88);
   --paper: #faf6ee;
   --ink: #1a1612;
+  --ink-quote: #12100d;
   --ink-soft: rgb(26 22 18 / 0.78);
   --ink-faint: rgb(26 22 18 / 0.48);
   --border: #b8a892;
   --accent: #6b4e2e;
   --accent-soft: rgb(107 78 46 / 0.12);
   --accent-muted: rgb(88 72 58 / 0.88);
-  --highlight: rgba(255, 220, 88, 0.55);
-  --highlight-inset: rgba(180, 130, 0, 0.18);
-  --highlight-glow: rgba(255, 230, 140, 0.35);
+  --highlight: hsla(46, 88%, 66%, 0.52);
+  --highlight-inset: hsla(42, 58%, 38%, 0.17);
+  --highlight-glow: hsla(48, 82%, 74%, 0.32);
   --line-color: #a08f72;
   --paper-shadow: rgba(45, 32, 18, 0.1);
   --paper-inset: rgba(120, 100, 70, 0.05);
@@ -29,15 +30,16 @@
   --header-bg: rgb(22 20 18 / 0.92);
   --paper: #1e1c18;
   --ink: #f0ebe3;
+  --ink-quote: #f5f1ea;
   --ink-soft: rgb(240 235 227 / 0.8);
   --ink-faint: rgb(240 235 227 / 0.45);
   --border: #4a4338;
   --accent: #d4a574;
   --accent-soft: rgb(212 165 116 / 0.14);
   --accent-muted: rgb(200 175 150 / 0.75);
-  --highlight: rgba(230, 170, 40, 0.35);
-  --highlight-inset: rgba(200, 140, 40, 0.22);
-  --highlight-glow: rgba(255, 200, 80, 0.12);
+  --highlight: hsla(40, 72%, 52%, 0.33);
+  --highlight-inset: hsla(38, 55%, 45%, 0.2);
+  --highlight-glow: hsla(42, 70%, 58%, 0.1);
   --line-color: #7a6e5a;
   --paper-shadow: rgba(0, 0, 0, 0.35);
   --paper-inset: rgba(0, 0, 0, 0.2);
@@ -48,6 +50,7 @@ body {
   margin: 0;
   background-color: var(--page-bg);
   background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='0.024'/%3E%3C/svg%3E"),
     radial-gradient(
       ellipse 140% 90% at 50% -15%,
       rgb(255 248 235 / 0.55),
@@ -79,6 +82,7 @@ body {
 
 .dark body {
   background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='0.028'/%3E%3C/svg%3E"),
     radial-gradient(
       ellipse 120% 70% at 50% 0%,
       rgb(80 60 40 / 0.25),
@@ -213,18 +217,18 @@ body {
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .book-page--interactive:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     box-shadow:
       0 1px 0 rgb(255 255 255 / 0.45) inset,
-      0 2px 4px rgb(50 35 20 / 0.05),
-      0 20px 50px rgb(45 32 18 / 0.14),
+      0 3px 6px rgb(50 35 20 / 0.06),
+      0 26px 58px rgb(45 32 18 / 0.17),
       inset 0 0 52px var(--paper-inset);
   }
 
   .dark .book-page--interactive:hover {
     box-shadow:
       0 1px 0 rgb(255 255 255 / 0.08) inset,
-      0 20px 56px rgb(0 0 0 / 0.45),
+      0 26px 64px rgb(0 0 0 / 0.5),
       inset 0 0 40px var(--paper-inset);
   }
 }
@@ -307,6 +311,7 @@ body {
 .quote-text {
   font-size: 1.075rem;
   line-height: 1.75;
+  color: var(--ink-quote);
 }
 
 @media (min-width: 640px) {

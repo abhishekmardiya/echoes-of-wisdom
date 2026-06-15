@@ -4,7 +4,7 @@ import { quotes } from "@/lib/quotes";
 
 export default function Home() {
   return (
-    <div className="page-atmosphere min-h-full bg-(--page-bg)">
+    <div className="page-atmosphere flex min-h-full flex-1 flex-col bg-(--page-bg)">
       <header className="header-hero relative overflow-hidden border-b border-(--border)/60">
         <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] z-40 max-sm:[&>button]:shadow-md sm:absolute sm:bottom-auto sm:right-4 sm:top-4 sm:z-10 sm:[&>button]:shadow-none md:right-6">
           <ThemeToggle />
@@ -14,9 +14,6 @@ export default function Home() {
           aria-hidden="true"
         />
         <div className="site-header relative mx-auto max-w-lg px-6 py-8 text-center sm:max-w-xl sm:py-10">
-          <p className="site-eyebrow mb-4 font-(family-name:--font-geist-sans) text-[0.65rem] font-medium tracking-[0.35em] text-(--accent-muted) uppercase">
-            A quiet library
-          </p>
           <div className="flex items-center justify-center gap-3 sm:gap-5">
             <span
               className="site-header-line site-header-line--accent"

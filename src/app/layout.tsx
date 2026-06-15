@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@teispace/next-themes";
 import type { Metadata } from "next";
 import { EB_Garamond, Geist } from "next/font/google";
+import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -53,7 +54,10 @@ export default function RootLayout({
           enableSystem
           themes={["light", "dark"]}
         >
-          {children}
+          <div className="flex min-h-full flex-1 flex-col">
+            <div className="flex min-h-0 flex-1 flex-col">{children}</div>
+            <SiteFooter />
+          </div>
         </ThemeProvider>
       </body>
     </html>
