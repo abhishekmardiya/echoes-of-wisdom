@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "ts": "tsc --noEmit --watch",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
+    "@teispace/next-themes": "^2.0.2",
     "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4"

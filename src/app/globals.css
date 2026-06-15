@@ -1,26 +1,145 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --page-bg: #d9d0c0;
+  --header-bg: rgb(245 240 230 / 0.9);
+  --paper: #f5f0e6;
+  --ink: #1a1a1a;
+  --ink-soft: rgb(26 26 26 / 0.75);
+  --ink-faint: rgb(26 26 26 / 0.45);
+  --border: #c4b8a4;
+  --highlight: rgba(255, 235, 59, 0.52);
+  --highlight-inset: rgba(210, 170, 0, 0.15);
+  --highlight-glow: rgba(255, 245, 120, 0.3);
+  --line-color: #b8a88a;
+  --paper-shadow: rgba(80, 60, 30, 0.08);
+  --paper-inset: rgba(120, 100, 70, 0.04);
+  --spine-shadow: rgba(80, 60, 30, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --page-bg: #141210;
+  --header-bg: rgb(28 26 22 / 0.95);
+  --paper: #242018;
+  --ink: #e8e4dc;
+  --ink-soft: rgb(232 228 220 / 0.78);
+  --ink-faint: rgb(232 228 220 / 0.45);
+  --border: #4a4438;
+  --highlight: rgba(250, 204, 21, 0.38);
+  --highlight-inset: rgba(180, 140, 0, 0.2);
+  --highlight-glow: rgba(250, 204, 21, 0.15);
+  --line-color: #6a6254;
+  --paper-shadow: rgba(0, 0, 0, 0.25);
+  --paper-inset: rgba(0, 0, 0, 0.15);
+  --spine-shadow: rgba(0, 0, 0, 0.2);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.book-page {
+  position: relative;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.55) 0%,
+      transparent 42%,
+      rgba(120, 100, 70, 0.04) 100%
+    ),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  box-shadow:
+    0 1px 1px rgba(80, 60, 30, 0.05),
+    0 4px 16px var(--paper-shadow),
+    inset 0 0 40px var(--paper-inset);
+  transition: background-color 0.2s ease;
+}
+
+.dark .book-page {
+  background-image:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      transparent 42%,
+      rgba(0, 0, 0, 0.08) 100%
+    ),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+}
+
+.book-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 14px 0 28px -14px var(--spine-shadow);
+}
+
+.book-serif {
+  font-family: var(--font-eb-garamond), Georgia, "Times New Roman", serif;
+}
+
+.book-body {
+  font-family: var(--font-eb-garamond), Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  font-size: 0.975rem;
+  line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.quote-text {
+  font-size: 1.075rem;
+  line-height: 1.75;
+}
+
+@media (min-width: 640px) {
+  .quote-text {
+    font-size: 1.125rem;
+  }
+}
+
+.highlight-text {
+  background-color: var(--highlight);
+  color: inherit;
+  padding: 0.06em 0.1em 0.1em;
+  margin: 0 -0.06em;
+  border-radius: 0.15em 0.25em 0.2em 0.12em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  box-shadow:
+    inset 0 -1px 0 var(--highlight-inset),
+    0 1px 0 var(--highlight-glow);
+}
+
+.site-header-line {
+  height: 1px;
+  width: 2.5rem;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--line-color) 20%,
+    var(--line-color) 80%,
+    transparent
+  );
+}
+
+@layer base {
+  button:not(:disabled),
+  a,
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
 }
