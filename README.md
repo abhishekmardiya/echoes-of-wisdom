@@ -11,9 +11,9 @@ Echoes of Wisdom is a single-page site that shows a list of book quotes: the quo
 
 ## How quotes are loaded
 
-Quotes live in code as a static list in [`src/lib/quotes.ts`](src/lib/quotes.ts). Each item has a `quote` string and a `book` string. The home page calls `quotes`, which returns that list (no network request).
+Quotes live in code in [`src/lib/quotes.ts`](src/lib/quotes.ts). Source data is an array of **books** (`quoteBooks`): each entry has `title`, `author`, and a `quotes` array of strings. That list is flattened into exported `quotes`, where each row is a `Quote` (`text`, `title`, `author`) for the UI. There is no network request.
 
-To add or change quotes, edit the `quotes` array in `quotes.ts` and redeploy or refresh locally.
+To add or change quotes, append or edit objects in `quoteBooks` and redeploy or refresh locally.
 
 ## Site URL (Open Graph)
 
