@@ -22,6 +22,9 @@ const quoteBooks: QuoteBook[] = [
       "When you want something, the entire universe conspires in helping you to achieve it.",
       "If you start out by promising what you don't even have yet, you'll lose your desire to work towards getting it.",
       "You must always know what it is that you want.",
+      "When you are in love, things make even more sense.",
+      "If you pay attention to the present, you can improve it. And if you improve the present, what comes later will also be better.",
+      "Every day was there to be lived or to mark one's departure from this world.",
     ],
   },
 ];
