@@ -11,15 +11,9 @@ Echoes of Wisdom is a single-page site that shows a list of book quotes: the quo
 
 ## How quotes are loaded
 
-Quotes are fetched at request/build time from a JSON document hosted on [Vercel Blob](https://vercel.com/docs/storage/vercel-blob). The app expects this shape:
+Quotes live in code as a static list in [`src/lib/quotes.ts`](src/lib/quotes.ts). Each item has a `quote` string and a `book` string. The home page calls `quotes`, which returns that list (no network request).
 
-```json
-{
-  "quotes": [{ "id": 1, "quote": "…", "book": "…" }]
-}
-```
-
-The URL is set in [`src/lib/quotes.ts`](src/lib/quotes.ts). Change the `fetch` URL there if you point at your own file.
+To add or change quotes, edit the `quotes` array in `quotes.ts` and redeploy or refresh locally.
 
 ## Scripts
 

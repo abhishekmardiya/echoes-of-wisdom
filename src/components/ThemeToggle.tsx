@@ -42,7 +42,7 @@ function MoonIcon() {
   );
 }
 
-export default function ThemeToggle() {
+export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 

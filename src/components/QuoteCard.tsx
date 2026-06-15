@@ -4,9 +4,9 @@ type QuoteCardProps = {
   quote: Quote;
 };
 
-export default function QuoteCard({ quote }: QuoteCardProps) {
+export function QuoteCard({ quote }: QuoteCardProps) {
   return (
-    <article className="book-page mx-auto w-full max-w-md px-7 py-8 sm:px-8 sm:py-9">
+    <article className="book-page mb-6 inline-block w-full break-inside-avoid overflow-hidden rounded-xl px-7 py-8 sm:mb-8 sm:px-8 sm:py-9">
       <blockquote className="book-body">
         <p className="book-body quote-text">
           &ldquo;

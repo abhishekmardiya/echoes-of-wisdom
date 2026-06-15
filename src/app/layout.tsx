@@ -21,8 +21,6 @@ export const metadata: Metadata = {
   description: "Underlined wisdom from books",
 };
 
-export const revalidate = 86400; // 1 day
-
 export default async function RootLayout({
   children,
 }: Readonly<{

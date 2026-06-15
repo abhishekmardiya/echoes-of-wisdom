@@ -1,14 +1,12 @@
-import QuoteCard from "@/components/QuoteCard";
-import ThemeToggle from "@/components/ThemeToggle";
-import { getQuotes } from "@/lib/quotes";
+import { QuoteCard } from "@/components/QuoteCard";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { quotes } from "@/lib/quotes";
 
 export default async function Home() {
-  const quotes = await getQuotes();
-
   return (
     <div className="min-h-full bg-(--page-bg)">
       <header className="relative border-b border-(--border)/80 bg-(--header-bg)">
-        <div className="absolute right-4 top-4 sm:right-6">
+        <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] z-40 max-sm:[&>button]:shadow-md sm:absolute sm:bottom-auto sm:right-4 sm:top-4 sm:z-10 sm:[&>button]:shadow-none md:right-6">
           <ThemeToggle />
         </div>
         <div className="site-header mx-auto max-w-md px-6 py-6 text-center sm:py-8">
@@ -25,10 +23,10 @@ export default async function Home() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-md px-4 py-8 sm:px-6 sm:py-10">
-        <div className="flex flex-col gap-8 sm:gap-10">
-          {quotes.map((quote) => (
-            <QuoteCard key={quote.quote} quote={quote} />
+      <main className="mx-auto max-w-7xl px-4 pb-24 pt-8 sm:px-6 sm:py-10 sm:pb-10">
+        <div className="columns-1 [column-fill:balance] gap-x-6 sm:columns-2 sm:gap-x-8 xl:columns-3">
+          {quotes.map((quote, index) => (
+            <QuoteCard key={`${index}-${quote.book}`} quote={quote} />
           ))}
         </div>
       </main>
