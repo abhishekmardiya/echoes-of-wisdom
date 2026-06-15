@@ -15,6 +15,10 @@ Quotes live in code in [`src/lib/quotes.ts`](src/lib/quotes.ts). Source data is 
 
 To add or change quotes, append or edit objects in `quoteBooks` and redeploy or refresh locally.
 
+## Production domain (SEO)
+
+The app’s production URL is **`https://echoes-of-wisdom-ten.vercel.app`**. That value is set as `metadataBase` in [`src/app/layout.tsx`](src/app/layout.tsx) so Next.js can build absolute URLs for Open Graph and related metadata. If the site moves to another domain or a custom hostname, update `metadataBase` there to match.
+
 ## Scripts
 
 ```bash

@@ -16,24 +16,25 @@ const ebGaramond = EB_Garamond({
   style: ["normal", "italic"],
 });
 
-function getMetadataBaseUrl(): string {
-  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL;
-  if (fromEnv && fromEnv.length > 0) {
-    return fromEnv;
-  }
-
-  const vercelUrl = process.env.VERCEL_URL;
-  if (vercelUrl && vercelUrl.length > 0) {
-    return `https://${vercelUrl}`;
-  }
-
-  return "http://localhost:3000";
-}
-
 export const metadata: Metadata = {
-  metadataBase: new URL(getMetadataBaseUrl()),
-  title: "Echoes of Wisdom",
-  description: "Underlined wisdom from books",
+  metadataBase: new URL("https://echoes-of-wisdom-ten.vercel.app"),
+  title: "Echoes of Wisdom | Literary Quotes & Book Wisdom for Readers",
+  description:
+    "Echoes of Wisdom gathers memorable quotes from fiction and nonfiction. Revisit lines that moved you and keep literary wisdom you return to.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Echoes of Wisdom",
+    title: "Echoes of Wisdom | Literary Quotes & Book Wisdom for Readers",
+    description:
+      "Discover curated quotes and underlined book wisdom worth saving and sharing—built for readers who love words that linger.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Echoes of Wisdom | Literary Quotes & Book Wisdom for Readers",
+    description:
+      "Discover curated quotes and underlined book wisdom worth saving and sharing—built for readers who love words that linger.",
+  },
 };
 
 export default function RootLayout({
