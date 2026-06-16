@@ -17,8 +17,8 @@ export const QuoteMasonry = ({ quotes }: { quotes: Quote[] }) => {
       className="quote-masonry"
       columnClassName="quote-masonry-column"
     >
-      {quotes.map((quote) => (
-        <QuoteCard key={quote.text} quote={quote} />
+      {quotes.map((quote, index) => (
+        <QuoteCard key={quote.text} quote={quote} enterIndex={index} />
       ))}
     </Masonry>
   );
