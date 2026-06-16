@@ -13,7 +13,7 @@ export default function Home() {
           className="header-hero-glow pointer-events-none absolute inset-0 opacity-100"
           aria-hidden="true"
         />
-        <div className="site-header page-header-enter relative mx-auto max-w-lg px-6 py-8 text-center sm:max-w-xl sm:py-10">
+        <div className="site-header relative mx-auto max-w-lg px-6 py-8 text-center sm:max-w-xl sm:py-10">
           <div className="flex items-center justify-center gap-3 sm:gap-5">
             <span
               className="site-header-line site-header-line--accent"

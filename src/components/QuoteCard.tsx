@@ -13,7 +13,7 @@ export const QuoteCard = ({
       className="book-page book-page--interactive quote-card-enter mb-6 w-full overflow-hidden rounded-2xl px-7 py-8 sm:mb-8 sm:px-8 sm:py-9"
       style={
         {
-          "--enter-delay": `${350 + enterIndex * 120}ms`,
+          "--enter-delay": `${220 + enterIndex * 80}ms`,
         } as CSSProperties
       }
     >

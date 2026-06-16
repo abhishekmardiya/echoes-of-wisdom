@@ -231,18 +231,6 @@ body {
   }
 }
 
-@keyframes page-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes quote-card-enter {
   0% {
     opacity: 0;
@@ -260,13 +248,9 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .page-header-enter {
-    animation: page-fade-in 1.1s cubic-bezier(0.22, 1, 0.36, 1) backwards;
-  }
-
   .quote-card-enter {
-    animation: quote-card-enter 1.15s cubic-bezier(0.22, 1, 0.36, 1) backwards;
-    animation-delay: var(--enter-delay, 350ms);
+    animation: quote-card-enter 0.85s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: var(--enter-delay, 220ms);
   }
 }
 
