@@ -4,7 +4,7 @@ const REPO_URL = "https://github.com/abhishekmardiya/echoes-of-wisdom";
 
 export const SiteFooter = () => {
   return (
-    <footer className="relative z-1 border-t border-(--border)/50 px-4 py-8 text-center max-sm:pb-24 sm:py-10">
+    <footer className="relative z-1 border-t border-(--border)/50 px-4 pt-7 pb-8 text-center sm:py-10">
       <Link
         prefetch={false}
         href={REPO_URL}

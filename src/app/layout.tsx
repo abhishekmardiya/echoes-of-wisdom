@@ -18,8 +18,10 @@ const ebGaramond = EB_Garamond({
 
 const pageTitle = "Echoes of Wisdom | Quotes & Book Wisdom for Readers";
 
+const siteUrl = new URL("https://echoes-of-wisdom-ten.vercel.app");
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://echoes-of-wisdom-ten.vercel.app"),
+  metadataBase: siteUrl,
   title: pageTitle,
   description:
     "Echoes of Wisdom gathers memorable quotes from fiction and nonfiction. Revisit lines that moved you and keep literary wisdom you return to.",
@@ -30,6 +32,7 @@ export const metadata: Metadata = {
     title: pageTitle,
     description:
       "Discover curated quotes and underlined book wisdom worth saving and sharing—built for readers who love words that linger.",
+    url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
@@ -58,7 +61,10 @@ export default function RootLayout({
           themes={["light", "dark"]}
         >
           <div className="flex min-h-full flex-1 flex-col">
-            <div className="flex min-h-0 flex-1 flex-col">{children}</div>
+            {/* z-10 keeps fixed UI (e.g. theme toggle) above SiteFooter (z-1) for hit-testing */}
+            <div className="relative z-10 flex min-h-0 flex-1 flex-col">
+              {children}
+            </div>
             <SiteFooter />
           </div>
         </ThemeProvider>
