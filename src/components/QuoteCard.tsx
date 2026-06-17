@@ -8,12 +8,16 @@ export const QuoteCard = ({
   quote: Quote;
   enterIndex?: number;
 }) => {
+  const enterDelay = enterIndex * 100;
+
   return (
     <article
-      className="book-page book-page--interactive quote-card-enter mb-6 w-full overflow-hidden rounded-2xl px-7 py-8 sm:mb-8 sm:px-8 sm:py-9"
+      className="book-page book-page--interactive quote-card-enter w-full overflow-hidden rounded-2xl px-7 py-8 sm:px-8 sm:py-9"
       style={
         {
-          "--enter-delay": `${220 + enterIndex * 80}ms`,
+          "--card-order": enterIndex,
+          "--enter-delay": `${enterDelay}ms`,
+          order: enterIndex,
         } as CSSProperties
       }
     >
