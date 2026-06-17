@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@teispace/next-themes";
 import type { Metadata } from "next";
 import { EB_Garamond, Geist } from "next/font/google";
+import { FloatingActions } from "@/components/FloatingActions";
 import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
@@ -66,6 +67,7 @@ export default function RootLayout({
               {children}
             </div>
             <SiteFooter />
+            <FloatingActions />
           </div>
         </ThemeProvider>
       </body>

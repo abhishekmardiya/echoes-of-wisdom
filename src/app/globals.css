@@ -315,7 +315,7 @@ body {
 .quote-masonry {
   display: flex;
   margin-left: -1.5rem;
-  width: 100%;
+  width: calc(100% + 1.5rem);
 }
 
 .quote-masonry-column {
@@ -326,6 +326,7 @@ body {
 @media (min-width: 640px) {
   .quote-masonry {
     margin-left: -2rem;
+    width: calc(100% + 2rem);
   }
 
   .quote-masonry-column {

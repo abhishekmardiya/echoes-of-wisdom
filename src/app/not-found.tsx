@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "Page not found",
@@ -10,10 +9,6 @@ export const metadata: Metadata = {
 export function NotFound() {
   return (
     <div className="page-atmosphere flex flex-1 flex-col bg-(--page-bg)">
-      <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] z-40 max-sm:[&>button]:shadow-md sm:absolute sm:bottom-auto sm:right-4 sm:top-4 sm:z-10 sm:[&>button]:shadow-none md:right-6">
-        <ThemeToggle />
-      </div>
-
       <main className="relative z-1 flex flex-1 flex-col items-center justify-center px-6 py-16">
         <article className="book-page book-page--interactive max-w-md rounded-2xl px-8 py-10 text-center sm:px-10 sm:py-12">
           <p className="font-(family-name:--font-geist-sans) text-[0.7rem] font-medium tracking-[0.28em] text-(--accent-muted) uppercase">

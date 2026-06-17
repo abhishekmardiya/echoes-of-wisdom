@@ -17,7 +17,7 @@ const quoteBooks: QuoteBook[] = [
     quotes: [
       "We all need to be aware of our personal calling.",
       "The secret of life, though, is to fall seven times and to get up eight times.",
-      "If you believe yourself worthy of the thing you fought so hard to get, then you become an instrument of God. You help the soul of the world. And you understand why you are here.",
+      "If you believe yourself worthy of the thing you fought so hard to get, then you become an instrument of God. You help the Soul of the World. And you understand why you are here.",
       "Dreams are the language of God.",
       "When you want something, the entire universe conspires to help you achieve it.",
       "If you start out by promising what you don't even have yet, you'll lose your desire to work towards getting it.",

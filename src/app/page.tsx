@@ -1,14 +1,10 @@
 import { QuoteMasonry } from "@/components/QuoteMasonry";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { quotes } from "@/lib/quotes";
 
 export default function Home() {
   return (
     <div className="page-atmosphere flex min-h-full flex-1 flex-col bg-(--page-bg)">
       <header className="header-hero relative z-20 overflow-hidden border-b border-(--border)/60">
-        <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] z-40 max-sm:[&>button]:shadow-md sm:absolute sm:bottom-auto sm:right-4 sm:top-4 sm:z-10 sm:[&>button]:shadow-none md:right-6">
-          <ThemeToggle />
-        </div>
         <div
           className="header-hero-glow pointer-events-none absolute inset-0 opacity-100"
           aria-hidden="true"
