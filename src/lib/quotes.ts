@@ -55,6 +55,17 @@ const quoteBooks: QuoteBook[] = [
       "Every person on Earth plays a central role in the history of the world, and normally they don't know it.",
     ],
   },
+  {
+    title: "Ikigai",
+    author: "Héctor García and Francesc Miralles",
+    quotes: [
+      "Only staying active will make you want to live to a hundred years.",
+      "Treat everyone like a brother, even if you have never met them before.",
+      "Whatever you do, don't retire.",
+      "An active mind, a youthful body.",
+      "Dealing with new situations, learning something new every day, playing games, and interacting with other people seem to be essential strategies for the mind.",
+    ],
+  },
 ];
 
 export const quotes: Quote[] = quoteBooks.flatMap(
